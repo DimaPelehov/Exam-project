@@ -1,11 +1,10 @@
-import ProductsList from '../components/Products/ProductsList'
+// import ProductsList from '../components/Products/ProductsList'
 
-type Props = {}
+type Props = { addProductToCart: (id: number, count: number) => void }
+
 const Main = (props: Props) => {
     return (
-        <div>
-            <ProductsList />
-        </div>
+        <div>{/* <ProductsList addProductToCart={addProductToCart} /> */}</div>
     )
 }
 export default Main

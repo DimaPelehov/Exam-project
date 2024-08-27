@@ -4,19 +4,29 @@ type Props = {
     id: number
     title: string
     description: string
-    price: number
+    gadjetPrice: number
     valut: string
+    addProductToCart: (id: number, count: number) => void
 }
 
-const ProductsListItem = ({ id, title, description, price, valut }: Props) => {
+const ProductsListItem = ({
+    id,
+    title,
+    description,
+    gadjetPrice,
+    valut,
+    addProductToCart,
+}: Props) => {
+    const count = 1
+
     return (
         <>
             <h2>{title}</h2>
             <p className="description">{description}</p>
             <span>
-                {valut}:{price}
+                {valut}:{gadjetPrice}
             </span>
-            <button>BUY</button>
+            <button onClick={() => addProductToCart(id, count)}>BUY</button>
         </>
     )
 }

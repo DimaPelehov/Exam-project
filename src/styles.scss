@@ -5,6 +5,19 @@
     align-items: center;
 }
 
+.header-btns {
+    display: flex;
+    gap: 5px;
+}
+
+.active {
+    background-color: aqua;
+}
+
+// .active-btn {
+//     background-color: aqua;
+// }
+
 .product-list {
     display: flex;
     justify-content: center;
@@ -24,8 +37,8 @@
     font-size: 25px;
 }
 
-.footer {
-    margin-top: 30px;
+.total {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }

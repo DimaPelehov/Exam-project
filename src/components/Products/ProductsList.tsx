@@ -2,21 +2,25 @@ import { productsArray } from '../../utils/productsArray'
 import ProductsListItem from './ProductsListItem'
 import '../../styles.scss'
 
-type Props = {}
-const ProductsList = (props: Props) => {
+type Props = { addProductToCart: (id: number, count: number) => void }
+
+const ProductsList = ({ addProductToCart }: Props) => {
     return (
         <div className="product-list">
-            {productsArray.map(({ id, title, description, price, valut }) => (
-                <div key={id} className="product">
-                    <ProductsListItem
-                        id={id}
-                        title={title}
-                        description={description}
-                        price={price}
-                        valut={valut}
-                    />
-                </div>
-            ))}
+            {productsArray.map(
+                ({ id, title, description, gadjetPrice, UAHvalut }) => (
+                    <div key={id} className="product">
+                        <ProductsListItem
+                            id={id}
+                            title={title}
+                            description={description}
+                            gadjetPrice={gadjetPrice}
+                            valut={UAHvalut}
+                            addProductToCart={addProductToCart}
+                        />
+                    </div>
+                )
+            )}
         </div>
     )
 }
